@@ -19,8 +19,12 @@ def main():
     operations = Operation.from_list(last_operations)
     # Show final result
     for operation in operations:
-        print(f"{operation.edit_date(operation.date)} {operation.description} \n"
-              f"{operation.hide_card_numbers(operation.come_from)} -> {operation.hide_account_numbers(operation.to)}\n"
-              f"{operation.operationAmount['amount']} {operation.operationAmount['currency']['name']}\n")
+        print(
+            f"{operation.edit_date(operation.date)} {operation.description} \n"
+            f"{operation.hide_card_numbers(operation.come_from)} -> {operation.hide_account_numbers(operation.to)}\n"
+            f"{operation.operationAmount['amount']} {operation.operationAmount['currency']['name']}\n"
+        )
 
-main()
+
+if __name__ == "__main__":
+    main()

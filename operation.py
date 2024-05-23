@@ -32,7 +32,7 @@ class Operation:
     def hide_card_numbers(self, come_from: str) -> str:
         """Return string with hidden card numbers."""
         if come_from:
-            account_info = "".join([x for x in self.come_from if x.isalpha()])
+            account_info = "".join([x for x in self.come_from if not x.isnumeric()])
             card_nums = "".join([x for x in self.come_from if x.isnumeric()])
             return f"{account_info} {card_nums[:4]} {card_nums[6:8]}** **** {card_nums[-4:]}"
 
@@ -43,20 +43,3 @@ class Operation:
 
 
 
-operation = Operation(**{
-    "id": 594226727,
-    "state": "CANCELED",
-    "date": "2018-09-12T21:27:25.241689",
-    "operationAmount": {
-      "amount": "67314.70",
-      "currency": {
-        "name": "руб.",
-        "code": "RUB"
-      }
-    },
-    "description": "Перевод организации",
-    "come_from": "Visa Platinum 1246377376343588",
-    "to": "Счет 14211924144426031657"
-  })
-
-print(operation)
