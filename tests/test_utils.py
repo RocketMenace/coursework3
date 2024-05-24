@@ -2,7 +2,7 @@
 Module for testing utils module.
 """
 
-import src.utils as u
+from src import utils
 import pytest
 
 
@@ -517,7 +517,7 @@ def example_data_sorted():
 
 
 def test_edit_operations(example_data):
-    assert u.edit_operations(example_data)[0] == {
+    assert utils.edit_operations(example_data)[0] == {
         "id": 441945886,
         "state": "EXECUTED",
         "date": "2019-08-26T10:50:58.294041",
@@ -532,11 +532,11 @@ def test_edit_operations(example_data):
 
 
 def test_sort_operations(example_data, example_data_sorted):
-    assert u.sort_operations(example_data) == example_data_sorted
+    assert utils.sort_operations(example_data) == example_data_sorted
 
 
 def test_show_last_operation(example_data_sorted):
-    assert u.show_last_operation(example_data_sorted, 5) == [
+    assert utils.show_last_operation(example_data_sorted, 5) == [
         {
             "id": 863064926,
             "state": "EXECUTED",
@@ -611,4 +611,5 @@ def test_show_last_operation(example_data_sorted):
     ]
 
 
-
+# def test_get_operations():
+#     assert utils.get_operations('operations.json') is list

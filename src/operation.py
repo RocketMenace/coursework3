@@ -9,7 +9,7 @@ from datetime import datetime
 @dataclass
 class Operation:
     """"""
-    id: str
+    id: int
     state: str
     date: str
     operationAmount: dict
@@ -18,7 +18,8 @@ class Operation:
     come_from: str = None
 
     @classmethod
-    def from_list(cls, array: list) -> list:
+    def from_dict(cls, array: list) -> list:
+        """Returns list of class instances"""
         return [Operation(**x) for x in array]
 
     def edit_date(self, date: str) -> str:

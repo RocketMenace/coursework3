@@ -2,8 +2,8 @@
 Module of main code of program.
 """
 
-from operation import Operation
-import utils as u
+from src.operation import Operation
+from src import utils as u
 
 
 def main():
@@ -16,15 +16,15 @@ def main():
     # Extract specified number of operations.
     last_operations = u.show_last_operation(sorted_operations, 5)
     # Class creation from list.
-    operations = Operation.from_list(last_operations)
-    # Show final result
-    for operation in operations:
+    operations = Operation.from_dict(last_operations)
+    return [x for x in operations]
+
+
+if __name__ == "__main__":
+    transactions = main()
+    for operation in transactions:
         print(
             f"{operation.edit_date(operation.date)} {operation.description} \n"
             f"{operation.hide_card_numbers(operation.come_from)} -> {operation.hide_account_numbers(operation.to)}\n"
             f"{operation.operationAmount['amount']} {operation.operationAmount['currency']['name']}\n"
         )
-
-
-if __name__ == "__main__":
-    main()
