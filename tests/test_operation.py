@@ -230,4 +230,8 @@ def test_inequality(list_of_examples):
     operation_2 = Operation(**list_of_examples[1])
     assert operation_1 != operation_2
 
-# def test_
+
+def test_identity(example_data):
+    operation_1 = example_data
+    operation_2 = example_data
+    assert operation_1 is operation_2

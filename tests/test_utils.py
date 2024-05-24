@@ -611,5 +611,5 @@ def test_show_last_operation(example_data_sorted):
     ]
 
 
-# def test_get_operations():
-#     assert utils.get_operations('operations.json') is list
+def test_get_operations(example_data):
+    assert utils.get_operations() == isinstance(example_data, list)

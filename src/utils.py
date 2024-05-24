@@ -29,5 +29,5 @@ def sort_operations(data: list) -> list:
 
 
 def show_last_operation(data: list, number: int) -> list:
-    """Returns list of specified number last operations."""
-    return [x for x in data[0 : number + 1] if x["state"] == "EXECUTED"]
+    """Returns list of specified number of last operations."""
+    return [x for x in data[0: number + 1] if x["state"] == "EXECUTED"]
