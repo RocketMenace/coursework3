@@ -612,4 +612,4 @@ def test_show_last_operation(example_data_sorted):
 
 
 def test_get_operations(example_data):
-    assert utils.get_operations() == isinstance(example_data, list)
+    assert isinstance(utils.get_operations(), list) == isinstance(example_data, list)

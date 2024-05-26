@@ -8,7 +8,7 @@ from pathlib import Path
 
 def get_operations() -> list:
     """Returns list of client's operations."""
-    path = Path("./data/operations.json")
+    path = Path("../data/operations.json")
     content = path.read_text()
     data = json.loads(content)
     return data
@@ -31,3 +31,6 @@ def sort_operations(data: list) -> list:
 def show_last_operation(data: list, number: int) -> list:
     """Returns list of specified number of last operations."""
     return [x for x in data[0: number + 1] if x["state"] == "EXECUTED"]
+
+
+print(get_operations())
