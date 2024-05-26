@@ -18,6 +18,10 @@ isort = "^5.13.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.2.1"
+coverage = "^7.5.1"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests",]
 
 [build-system]
 requires = ["poetry-core"]
