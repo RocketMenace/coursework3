@@ -33,4 +33,3 @@ def show_last_operation(data: list, number: int) -> list:
     return [x for x in data[0: number + 1] if x["state"] == "EXECUTED"]
 
 
-print(get_operations())

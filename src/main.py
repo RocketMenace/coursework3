@@ -24,7 +24,7 @@ if __name__ == "__main__":
     transactions = main()
     for operation in transactions:
         print(
-            f"{operation.edit_date(operation.date)} {operation.description} \n"
+            f"{operation.edit_date()} {operation.description} \n"
             f"{operation.hide_card_numbers(operation.come_from)} -> {operation.hide_account_numbers(operation.to)}\n"
             f"{operation.operationAmount['amount']} {operation.operationAmount['currency']['name']}\n"
         )

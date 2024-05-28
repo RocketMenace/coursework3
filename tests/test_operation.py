@@ -235,3 +235,13 @@ def test_identity(example_data):
     operation_1 = example_data
     operation_2 = example_data
     assert operation_1 is operation_2
+
+
+def test_hide_card_numbers(example_data):
+    operation = example_data
+    assert operation.hide_card_numbers(operation.come_from) == "Maestro 1596 83** **** 5199"
+
+
+def test_hide_account_number(example_data):
+    operation = example_data
+    assert operation.hide_account_numbers(operation.to) == "Счет **9589"
