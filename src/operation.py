@@ -25,10 +25,8 @@ class Operation:
     def edit_date(self) -> str:
         """Returns representation of time."""
         date = datetime.fromisoformat(self.date)
-        day = date.day
-        month = date.month
-        year = date.year
-        return f"{day}.{month}.{year}"
+        format = "%d-%m-%Y"
+        return date.strftime(format)
 
     def hide_card_numbers(self, come_from: str) -> str:
         """Return string with hidden card numbers."""
