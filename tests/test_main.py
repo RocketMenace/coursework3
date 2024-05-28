@@ -4,10 +4,12 @@ Module for main module testing.
 
 from src.main import main
 from src.operation import Operation
+import pytest
 
 
-def test_main():
-    assert main() == [
+@pytest.fixture
+def example_data():
+    return [
         Operation(
             id=114832369,
             state="EXECUTED",
@@ -69,3 +71,12 @@ def test_main():
             come_from="Счет 35421428450077339637",
         ),
     ]
+
+
+def test_main(example_data):
+    assert main() == example_data
+
+
+def test_main_state_executed(example_data):
+    for x in example_data:
+        assert x.state == "EXECUTED"
