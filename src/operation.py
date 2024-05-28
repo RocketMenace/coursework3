@@ -25,7 +25,7 @@ class Operation:
     def edit_date(self) -> str:
         """Returns representation of time."""
         date = datetime.fromisoformat(self.date)
-        format = "%d-%m-%Y"
+        format = "%d.%m.%Y"
         return date.strftime(format)
 
     def hide_card_numbers(self, come_from: str) -> str:
